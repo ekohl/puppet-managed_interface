@@ -84,7 +84,7 @@ define managed_interface($ipaddr, $netmask, $up=true, $network='',
             }
         }
 
-        if ($gateway != '') {
+        if $gateway {
             augeas { "gateway-$device":
                 context => '/files/etc/sysconfig/network',
                 changes => [
